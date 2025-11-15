@@ -1,16 +1,13 @@
 const { createConnection } = require('typeorm');
 
-const isProduction = process.env.NODE_ENV === 'production';
-
-const databaseUrl = process.env.DATABASE_URL;
+console.log('🔧 PRODUCTION: Using PostgreSQL on Render');
+console.log('🔧 DATABASE_URL:', process.env.DATABASE_URL ? 'Exists' : 'Missing');
 
 module.exports = createConnection({
   type: 'postgres',
-  url: databaseUrl,
-  extra: {
-    ssl: {
-      rejectUnauthorized: false
-    }
+  url: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
   },
   synchronize: true,
   logging: false,
