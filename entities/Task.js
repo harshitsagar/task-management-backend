@@ -22,18 +22,18 @@ module.exports = new EntitySchema({
       default: 'pending'
     },
     dueDate: {
-      type: 'datetime',
+      type: 'timestamp',  // Changed from 'datetime' to 'timestamp'
       nullable: true
     },
     userId: {
       type: 'int'
     },
     createdAt: {
-      type: 'datetime',
+      type: 'timestamp',  // Changed from 'datetime' to 'timestamp'
       default: () => 'CURRENT_TIMESTAMP'
     },
     updatedAt: {
-      type: 'datetime',
+      type: 'timestamp',  // Changed from 'datetime' to 'timestamp'
       default: () => 'CURRENT_TIMESTAMP'
     }
   }

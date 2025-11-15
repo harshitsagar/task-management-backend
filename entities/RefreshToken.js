@@ -14,13 +14,13 @@ module.exports = new EntitySchema({
       unique: true
     },
     expiresAt: {
-      type: 'datetime'
+      type: 'timestamp'  // Changed from 'datetime' to 'timestamp'
     },
     userId: {
       type: 'int'
     },
     createdAt: {
-      type: 'datetime',
+      type: 'timestamp',  // Changed from 'datetime' to 'timestamp'
       default: () => 'CURRENT_TIMESTAMP'
     }
   }
